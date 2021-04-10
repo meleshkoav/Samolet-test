@@ -18,7 +18,9 @@ const RegionsListPage:React.FC<IRegionsListPageProps> = (
       {Object.entries(data).map(([regionName, libs]) => (
         <Panel key={regionName} header={`${regionName} (${libs.length})`}>
           {libs.map((lib) => (
-            <Link to={`/${lib.order}`}>{lib.fullname}</Link>
+            <div>
+              <Link to={`/${lib.order}`}>{lib.fullname}</Link>
+            </div>
           ))}
         </Panel>
       ))}
