@@ -1,5 +1,14 @@
 import React from 'react';
+import { IDataItem } from 'types';
 
-const RegionsListPage = () => <div>Regions</div>
+export type TRegionsListPageData = { [key: string]: IDataItem[] };
+
+export interface IRegionsListPageProps {
+  data: TRegionsListPageData;
+}
+
+const RegionsListPage:React.FC<IRegionsListPageProps> = ({ data }) => <pre>{
+  JSON.stringify(data, null, 2)
+}</pre>
 
 export default RegionsListPage;
