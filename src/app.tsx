@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { Layout } from 'antd';
 import './app.css';
 import { getData } from "./api";
 import { ConfigProvider } from 'antd';
@@ -44,11 +43,6 @@ export default function App() {
         </Switch>
       </BrowserRouter>
     </ConfigProvider>
-    {/* <Layout>
-      <pre>
-        { JSON.stringify(data, null, 2) }
-      </pre>
-    </Layout> */}
     </>
   )
 }

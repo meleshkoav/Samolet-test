@@ -1,7 +1,7 @@
 import { Descriptions } from 'antd';
 import React from 'react';
 import { useParams } from 'react-router';
-import { IDataItem, TDataItemById } from 'types';
+import { TDataItemById } from 'types';
 
 export interface ILibraryDetailsPageProps {
   data: TDataItemById;
