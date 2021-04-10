@@ -14,7 +14,13 @@ import { IDataItem, TDataItemById } from 'types';
 export default function App() {
   const [data, setData] = useState<IDataItem[]>([]);
 
-  const regionListData = useMemo<TRegionsListPageData>(() => _.groupBy(data, "territory"), [data]);
+  const regionListData = useMemo<TRegionsListPageData>(() => Object.entries(
+    _.groupBy(data, "territory")
+    ).map(([regionName, libs]) => ({
+      regionName,
+      count: libs.length,
+      libs,
+    })), [data]);
 
   const dataItemsById = useMemo<TDataItemById>(() => Object.fromEntries(
       data.map((item) => [`${item.order}`, item])
